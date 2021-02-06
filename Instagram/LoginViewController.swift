@@ -18,18 +18,12 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-           if UserDefaults.standard.bool(forKey: "userLoggedIn") == true{
-               performSegue(withIdentifier: "loginSegue", sender: self)
-           }
-       }
     
     @IBAction func onSignin(_ sender: Any) {
         let username = usernameField.text!
                let password = passwordField.text!
                PFUser.logInWithUsername(inBackground: username, password: password) { (user, Error) in
                    if user != nil{
-                       UserDefaults.standard.set(true, forKey: "userLoggedIn")
                        self.performSegue(withIdentifier: "loginSegue", sender: nil)
                    }else {
                         print("Error: \(Error?.localizedDescription)")
@@ -44,7 +38,6 @@ class LoginViewController: UIViewController {
         user.password = passwordField.text
         user.signUpInBackground { (success, error) in
             if success {
-                UserDefaults.standard.set(true, forKey: "userLoggedIn")
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }else{
                 print("Error: \(error?.localizedDescription)")
