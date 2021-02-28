@@ -46,8 +46,8 @@ The following **bonus** features are implemented:
 - [x] User can load past tweets infinitely. (2pts)
 
 ## Video Walkthrough
-
+##### I divided the whole video to 2 parts, since it's slow to process a long video.
 Here's a walkthrough of implemented user stories:
-
+<img src=http://g.recordit.co/iFnZoKjS4H.gif width='' alt='Video Walkthrough' />
 <img src=http://g.recordit.co/8OXV4tbfHz.gif width='' alt='Video Walkthrough' />
 
